@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/full_main"
+              style="@style/MatchParentStyle"
+              android:background="#b0000000"
+              android:gravity="center"
+              android:orientation="vertical">
+    <LinearLayout
+
+            style="@style/AlertLLStyle"
+                  android:padding="10dp">
+        <TextView
+                android:id="@+id/tv_dialog_title"
+                style="@style/WrapContentStyle"
+                android:text="请选择"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/merchant_listing_name_color"
+                android:textSize="20dp"/>
+
+        <ImageView
+                android:id="@+id/iv_dialog_icon"
+                style="@style/MatchParentStyle"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/dialog_split"/>
+
+        <Button
+                android:id="@+id/btn_protograph"
+                style="@style/FillParentWidthStyle"
+                android:background="@drawable/photo_btn"
+                android:padding="10dp"
+                android:text="@string/photograph"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:layout_margin="5dp"/>
+
+        <Button
+                android:id="@+id/btn_nativ_pic"
+                style="@style/FillParentWidthStyle"
+                android:background="@drawable/photo_btn"
+                android:text="@string/select_nativ_pic"
+                android:textColor="@color/white"
+                android:padding="10dp"
+                android:textSize="15sp"
+                android:layout_margin="5dp"/>
+    </LinearLayout>
+</LinearLayout>

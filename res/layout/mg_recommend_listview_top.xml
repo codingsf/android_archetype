@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+
+
+    <LinearLayout
+            android:id="@+id/mg_recom_table"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            >
+
+
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:id="@+id/table1">
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="80dp"
+                    android:minHeight="40dp"
+                    android:id="@+id/table1Icon"
+                    android:src="@drawable/icon"
+                    android:layout_weight="1"
+                    android:scaleType="fitXY"
+                    />
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="必备游戏"
+                    android:id="@+id/table1Name" android:layout_weight="0"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+                      android:id="@+id/table2"
+                      android:layout_width="0dp"
+                      android:layout_height="fill_parent"
+                      android:layout_weight="1"
+                      android:orientation="vertical"
+                      android:gravity="center">
+
+            <ImageView
+                    android:id="@+id/table2Icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:minWidth="80dp"
+                    android:minHeight="40dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/icon"
+                    />
+
+            <TextView
+                    android:id="@+id/table2Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="必备游戏2"
+                    android:layout_weight="0"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/table3"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+            <ImageView
+                    android:id="@+id/table3Icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="80dp"
+                    android:minHeight="40dp"
+                    android:src="@drawable/icon"
+                    android:layout_weight="1"/>
+
+            <TextView
+                    android:id="@+id/table3Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="必备游戏"
+                    android:layout_weight="0"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+                android:id="@+id/table4"
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+            <ImageView
+                    android:id="@+id/table4Icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="80dp"
+                    android:minHeight="40dp"
+                    android:src="@drawable/icon"
+                    android:layout_weight="1"/>
+
+            <TextView
+                    android:id="@+id/table4Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="必备游戏"
+                    android:layout_weight="0"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

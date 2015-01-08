@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+    <com.join.mgps.customview.ObservableScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:layout_weight="1">
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="标签"
+                        android:id="@+id/textView"/>
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent" android:id="@+id/tipsLayout">
+                </LinearLayout>
+            </LinearLayout>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="New Text"
+                    android:id="@+id/allInfoToShow" android:layout_weight="1"
+                    android:minHeight="500dp"/>
+            <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New Button"
+                    android:id="@+id/button"/>
+        </LinearLayout>
+    </com.join.mgps.customview.ObservableScrollView>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp" android:layout_alignParentEnd="false"
+            android:layout_alignParentBottom="true" android:focusableInTouchMode="false"
+            android:id="@+id/detialDownBottom" android:gravity="center" android:layout_weight="0">
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/loveButn" android:src="@drawable/img" android:layout_weight="0"/>
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="安装"
+                android:id="@+id/installButn" android:layout_weight="1"/>
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/shareButn" android:src="@drawable/del_icon_normal" android:layout_weight="0"/>
+    </LinearLayout>
+</LinearLayout>

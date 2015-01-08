@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/exit_layout"
+              style="@style/AlertLLStyle">
+
+    <include
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/alert_head_view"/>
+
+    <TextView
+            android:id="@+id/tv_dialog_content"
+            style="@style/WrapContentStyle"
+            android:gravity="center_horizontal"
+            android:layout_margin="20dp"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/cancel_confirm"
+            android:textSize="16sp"/>
+
+    <include
+            style="@style/AlertFootInclude"
+            layout="@layout/alert_foot_view"/>
+</LinearLayout>

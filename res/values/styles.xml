@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--宽度填充整个容器 高度跟容器做适应-->
+    <style name="FillParentWidthStyle">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <!--高度填充整个容器 宽度跟容器做适应-->
+    <style name="MatchParentHeightStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+    <!--宽度填充整个容器 高度跟容器做适应-->
+    <style name="MatchParentWidthStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <!--高度、宽度跟容器做适应-->
+    <style name="WrapContentStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <!--填充整个容器-->
+    <style name="MatchParentStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="AlertLLStyle">
+        <item name="android:layout_width">300dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="AlertFootInclude" parent="MatchParentWidthStyle">
+        <item name="android:gravity">bottom</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_marginBottom">20dp</item>
+    </style>
+    <!--title_style-->
+    <style name="TitleBarStyle" parent="WrapContentStyle">
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:shadowColor">@color/title_bar_color</item>
+        <!--阴影的颜色-->
+        <item name="android:shadowDx">0</item>
+        <!--阴影的水平偏移量-->
+        <item name="android:shadowDy">1</item>
+        <!--阴影的垂直偏移量-->
+        <item name="android:shadowRadius">1</item>
+        <!--阴影的范围-->
+    </style>
+    <style name="BgColor" parent="MatchParentStyle">
+        <item name="android:background">@color/white</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="TitleRlBg">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:background">@color/home_page_text_title</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="BarBaseStyle" parent="MatchParentHeightStyle">
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+
+
+    <style name="BarRightStyle" parent="BarBaseStyle">
+        <item name="android:layout_alignParentRight">true</item>
+    </style>
+
+    <style name="OrderItemRl">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="GridViewStyle" parent="MatchParentStyle">
+        <item name="android:layout_weight">1</item>
+        <item name="android:cacheColorHint">@android:color/transparent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:horizontalSpacing">8dp</item>
+        <item name="android:listSelector">@android:color/transparent</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:scrollbars">none</item>
+        <item name="android:stretchMode">columnWidth</item>
+        <item name="android:verticalSpacing">8dp</item>
+    </style>
+
+    <style name="HKDialogLoading" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="PopupAnimation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
+    </style>
+    <style name="text_flag">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:padding">4dp</item>
+    </style>
+    <style name="RatingBarStyle" parent="android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/ratingbar_drawable</item>
+        <item name="android:minHeight">40dip</item>
+        <item name="android:maxHeight">40dip</item>
+    </style>
+
+
+</resources>

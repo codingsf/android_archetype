@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+        >
+<com.join.mgps.customview.FlowLayout
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:id="@+id/flowLayout"  android:layout_margin="10dp"
+        android:layout_alignParentTop="true">
+
+<TextView
+        android:id="@+id/textView01"
+        style="@style/text_flag"
+        />
+
+<TextView
+        android:id="@+id/textView02"
+        style="@style/text_flag"
+        />
+
+<TextView
+        android:id="@+id/textView03"
+        style="@style/text_flag"
+        />
+
+<TextView
+        android:id="@+id/textView04"
+        style="@style/text_flag"
+        />
+
+<TextView
+        android:id="@+id/textView05"
+        style="@style/text_flag"
+        />
+
+<TextView
+        android:id="@+id/textView06"
+        style="@style/text_flag"
+        />
+
+<TextView
+        android:id="@+id/textView07"
+        style="@style/text_flag"
+        />
+</com.join.mgps.customview.FlowLayout>
+        <ListView android:layout_width="fill_parent" android:layout_height="match_parent"
+                android:id="@+id/historyListView" android:layout_below="@+id/flowLayout"
+                android:layout_above="@+id/clearLayout"/>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:id="@+id/clearLayout"
+                android:layout_alignParentBottom="true" android:gravity="center_vertical">
+               <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                       android:src="@drawable/delete" android:layout_margin="10dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="@string/clear_history"
+                        android:textColor="@color/gray"/>
+                </LinearLayout>
+        </RelativeLayout>

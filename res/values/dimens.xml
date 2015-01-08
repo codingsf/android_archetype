@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="faux_action_bar_size">48dp</dimen>
+    <dimen name="list_detail_image_size">60dp</dimen>
+    <dimen name="widget_min_width">110dp</dimen>
+    <dimen name="widget_min_height">110dp</dimen>
+    <dimen name="notification_icon_width_height">64dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!--首页-->
+    <dimen name="mgRecomTitlHight">40dp</dimen>
+    <dimen name="mgRecomTopViewpagerHight">200dp</dimen>
+    <dimen name="mgRecomSerchMaginLR">25dp</dimen>
+    <dimen name="mgRecomSerchMaginMovedLR">25dp</dimen>
+
+    <!--不要忘了我。详情页面里.我是New Button的高度-->
+    <dimen name="title_height">40dp</dimen>
+    <dimen name="panelHeight">100dp</dimen>
+</resources>

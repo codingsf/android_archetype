@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:descendantFocusability="blocksDescendants"
+              android:layout_height="match_parent">
+
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+                  android:layout_height="wrap_content" android:id="@+id/linearLayout">
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent"
+                      android:layout_height="wrap_content">
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="热门风云榜"
+                      android:id="@+id/top3Name" android:layout_weight="1"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="更多》"
+                      android:id="@+id/top3More" android:layout_weight="0"/>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent"
+                      android:layout_height="fill_parent">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+                          android:layout_height="fill_parent" android:layout_weight="1" android:gravity="center">
+                <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                               android:id="@+id/top3FirstIcon" android:src="@drawable/icon" android:layout_margin="5dp"
+                               android:layout_centerInParent="true"/>
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                               android:id="@+id/top3oneimage" android:src="@android:drawable/ic_delete"
+                               android:layout_gravity="top|right"/>
+                </FrameLayout>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="刀塔传奇"
+                          android:id="@+id/top3FirstAppname"/>
+                <Button style="?android:attr/buttonStyleSmall" android:layout_width="wrap_content"
+                        android:focusable="false"
+                        android:layout_height="wrap_content" android:text="安装" android:id="@+id/top3Firstinstallbutn"
+                        android:padding="0dp"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+                          android:layout_height="fill_parent" android:layout_weight="1" android:gravity="center">
+                <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                               android:id="@+id/top3SecondIcon" android:src="@drawable/icon" android:layout_margin="5dp"
+                               android:layout_centerInParent="true"/>
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                               android:id="@+id/top3Twoimage" android:src="@android:drawable/ic_delete"
+                               android:layout_gravity="top|right"/>
+                </FrameLayout>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="刀塔传奇"
+                          android:id="@+id/top3SecondAppname"/>
+                <Button style="?android:attr/buttonStyleSmall" android:layout_width="wrap_content"
+                        android:focusable="false"
+                        android:layout_height="wrap_content" android:text="安装" android:id="@+id/top3Secondinstallbutn"
+                        android:padding="0dp"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+                          android:layout_height="fill_parent" android:layout_weight="1" android:gravity="center">
+                <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                               android:id="@+id/top3ThreedIcon" android:src="@drawable/icon" android:layout_margin="5dp"
+                               android:layout_centerInParent="true"/>
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                               android:id="@+id/top3threeimage" android:src="@android:drawable/ic_delete"
+                               android:layout_gravity="top|right"/>
+                </FrameLayout>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="刀塔传奇"
+                          android:id="@+id/top3ThreeAppname"/>
+                <Button style="?android:attr/buttonStyleSmall" android:layout_width="wrap_content"
+                        android:focusable="false"
+                        android:layout_height="wrap_content" android:text="安装" android:id="@+id/top3Threeinstallbutn"
+                        android:padding="0dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

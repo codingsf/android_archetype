@@ -1,0 +1,121 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".DemoActivity">
+
+    <com.join.mgps.customview.SlidingUpPanelLayout
+            xmlns:sothree="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/sliding_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            sothree:panelHeight="@dimen/panelHeight"
+            sothree:shadowHeight="4dp"
+            sothree:paralaxOffset="0dp"
+            sothree:dragView="@+id/dragView"
+            android:visibility="visible">
+
+        <!-- MAIN CONTENT -->
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+
+            <android.support.v4.view.ViewPager
+                    android:id="@+id/pagertop"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+        </FrameLayout>
+
+        <!-- SLIDING LAYOUT -->
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:focusable="false"
+                android:id="@+id/dragView"
+                >
+            <FrameLayout android:layout_width="match_parent"
+                         android:layout_height="@dimen/panelHeight"
+                    >
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingLeft="100dp" android:layout_gravity="bottom" android:background="#ff87b1cd">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="New Text"
+                            android:id="@+id/appName"/>
+                    <RatingBar
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:numStars="6"
+                            android:rating="2"
+                            android:isIndicator="false"
+                            style="?android:attr/ratingBarStyleSmall"
+                            android:id="@+id/appStarNumber"/>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="New Text"
+                            android:id="@+id/downCountAndSize"/>
+                </LinearLayout>
+                <ImageView android:layout_width="80dp"
+                           android:layout_height="80dp"
+                           android:id="@+id/detialIconImage"
+                           android:src="@drawable/icon"/>
+                <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="下载"
+                        android:id="@+id/installButn" android:layout_gravity="bottom|right"/>
+            </FrameLayout>
+
+            <com.join.mgps.customview.SlidingTabLayout
+                    android:id="@+id/sliding_tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@color/primary"/>
+
+            <com.join.mgps.customview.MViewpagerV4
+                    android:id="@+id/pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/white"/>
+
+        </LinearLayout>
+    </com.join.mgps.customview.SlidingUpPanelLayout>
+    <FrameLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/title_height" android:id="@+id/title">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/titlebackview" android:background="#ff557bcd" android:gravity="center"
+                android:textSize="20dp" android:textColor="@android:color/white"/>
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/backbutn"
+                android:background="@drawable/back_icon"
+                android:layout_gravity="center_vertical"/>
+        <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button2"
+                android:layout_gravity="center_vertical|right"
+                android:background="@drawable/download_red_icon"/>
+    </FrameLayout>
+
+
+</RelativeLayout>

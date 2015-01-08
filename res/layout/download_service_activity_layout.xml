@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <Button
+            android:id="@+id/btnStartService"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="QQ开始下载"/>
+
+    <Button
+            android:id="@+id/downloadCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="下载中心"/>
+
+    <Button
+            android:id="@+id/btnWeixin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="微信下载"/>
+
+    <TextView
+            android:id="@+id/txtIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="下载进度"/>
+
+    <TextView
+            android:id="@+id/txtWeixinIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="微信下载进度"/>
+
+    <Button
+            android:id="@+id/deleteDownload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="删除下载"/>
+
+    <Button
+            android:id="@+id/installedList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="已经安装程序信息"/>
+
+    <Button
+            android:id="@+id/doInstall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="执行安装"/>
+
+
+
+    <ListView
+              android:id="@+id/listView"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content">
+
+    </ListView>
+
+
+</LinearLayout>

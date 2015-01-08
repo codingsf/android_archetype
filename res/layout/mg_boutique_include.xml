@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:descendantFocusability="blocksDescendants"
+              android:layout_height="match_parent">
+
+    <LinearLayout
+            android:id="@+id/recomBoutiqueLayout"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            <ImageView
+                    android:id="@+id/boutiqueIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon"/>
+
+            <TextView
+                    android:id="@+id/boutiqueTipName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="每日精品"
+                    android:background="#ff5eff66"/>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                <LinearLayout android:orientation="vertical"
+                              android:layout_width="fill_parent"
+                              android:layout_height="wrap_content"
+                              android:layout_weight="1">
+
+                    <TextView
+                            android:id="@+id/recomBoutiqueAppname"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="纪念碑谷破解版"/>
+
+                    <TextView
+                            android:id="@+id/recomeBoutiqeNumberandsize"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="48w人安装     234M"/>
+                </LinearLayout>
+                <Button
+                        android:id="@+id/recomBoutiqueInstallButn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="安装"
+                        android:focusable="false"
+                        android:layout_weight="0"
+                        android:padding="0dp"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:id="@+id/recomBoutiqueTips"
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"/>
+
+            <TextView
+                    android:id="@+id/recomDescribe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="妖精团不错的动作手游，闪亮的看法塞德里克送到路口附近理科生的风急螺丝钉棵解放离开理科生的风克里斯蒂lk"
+                    android:lines="2"
+                    android:maxLines="2"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

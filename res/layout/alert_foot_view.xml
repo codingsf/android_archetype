@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              style="@style/MatchParentWidthStyle">
+
+    <Button
+            android:id="@+id/btn_dialog_ok"
+            style="@style/OrderItemRl"
+            android:background="@drawable/btn_login_bg"
+            android:gravity="center"
+            android:onClick="exitOk"
+            android:text="@string/yes"
+
+            android:textColor="@color/white"
+            />
+
+    <Button
+            android:id="@+id/btn_dialog_cancel"
+            style="@style/OrderItemRl"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/btn_exit_alert"
+            android:gravity="center"
+            android:onClick="exitCancel"
+            android:text="@string/no"
+
+            android:textColor="@color/merchant_listing_name_color"
+            />
+</LinearLayout>

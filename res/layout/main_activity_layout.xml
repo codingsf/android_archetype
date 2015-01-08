@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <Button
+            android:id="@+id/btnImgListView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="图片加载以及ListView"/>
+
+    <Button
+            android:id="@+id/btnDB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="数据库操作"/>
+
+    <Button
+            android:id="@+id/btnPref"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SharedPref"/>
+
+    <Button
+            android:id="@+id/btnRestFul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RestFul"/>
+
+    <Button
+            android:id="@+id/btnFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="fragment"/>
+
+    <Button
+            android:id="@+id/btnAA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AA"/>
+
+    <Button
+            android:id="@+id/btnProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="progressBar"/>
+
+    <Button
+            android:id="@+id/startOtherApp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="start app"/>
+
+    <Button
+            android:id="@+id/downloadService"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="downloadService"/>
+    <Button
+            android:id="@+id/installInSilence"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="installInSilence"/>
+
+</LinearLayout>

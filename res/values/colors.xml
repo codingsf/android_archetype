@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="androidColor">#001232</color>
+    <color name="title_bar_color">#b2b2b2</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="red">#DE2756</color>
+    <color name="home_page_text_title">#42c2d5</color>
+    <color name="home_gray">#999999</color>
+    <color name="gray">#C7CBC7</color>
+    <color name="merchant_listing_name_color">#333333</color>
+    <color name="spinner_list_background">#EFEFEF</color>
+    <color name="spinner_list_select">#7BCBEE</color>
+    <color name="spinner_list_divider">#D8D8D8</color>
+    <color name="holo_blue_light">#ff33b5e5</color>
+    <color name="green">#00df1f</color>
+    <color name="goldYellow">#deb423</color>
+    <color name="blur_bg">#FFFAF0</color>
+    <color name="grey">#808080</color>
+    <color name="right_bg">#696969</color>
+
+
+    <color name="flow_1">#BFFCC3</color>
+    <color name="flow_2">#CDCDCD</color>
+    <color name="flow_3">#C2DDFE</color>
+
+    <color name="primary">#009688</color>
+    <color name="primaryDark">#00796b</color>
+    <color name="accent">#eeff41</color>
+    <color name="accentLight">#F4FF81</color>
+
+    <color name="btn1">#0066FF</color>
+    <color name="btn2">#009966</color>
+    <color name="btn3">#CC66CC</color>
+    <color name="btn4">#FF9900</color>
+
+
+</resources>

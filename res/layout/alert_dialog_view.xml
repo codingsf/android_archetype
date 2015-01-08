@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/full_main"
+              style="@style/MatchParentStyle"
+              android:background="#b0000000"
+              android:gravity="center"
+              android:orientation="vertical">
+
+    <include
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            layout="@layout/exit_dialog"/>
+</LinearLayout>

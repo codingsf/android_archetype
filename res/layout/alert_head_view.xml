@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              style="@style/MatchParentStyle">
+
+    <TextView
+            android:id="@+id/tv_dialog_title"
+            style="@style/WrapContentStyle"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="20dp"
+            android:textColor="@color/merchant_listing_name_color"
+            android:textSize="20dp"/>
+
+    <ImageView
+            android:id="@+id/iv_dialog_icon"
+            style="@style/MatchParentStyle"
+            android:src="@drawable/dialog_split"/>
+</LinearLayout>

@@ -1,0 +1,298 @@
+#
+# generated on 2014/09/29 10:21:05
+#
+# --table-start--
+dataClass=com.join.android.app.common.db.tables.Account
+tableName=account
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=name
+indexName=account_name_idx
+# --field-end--
+# --field-start--
+fieldName=orders
+foreignCollection=true
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=com.join.android.app.common.db.tables.Chapter
+tableName=chapter
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=chapterId
+# --field-end--
+# --field-start--
+fieldName=title
+# --field-end--
+# --field-start--
+fieldName=chapterDuration
+# --field-end--
+# --field-start--
+fieldName=learnedTime
+# --field-end--
+# --field-start--
+fieldName=bookmark
+# --field-end--
+# --field-start--
+fieldName=filesize
+# --field-end--
+# --field-start--
+fieldName=playUrl
+# --field-end--
+# --field-start--
+fieldName=downloadUrl
+# --field-end--
+# --field-start--
+fieldName=validUntil
+# --field-end--
+# --field-start--
+fieldName=leftDays
+# --field-end--
+# --field-start--
+fieldName=localCourse
+columnName=localcourse_id
+foreign=true
+foreignAutoRefresh=true
+foreignAutoCreate=true
+# --field-end--
+# --field-start--
+fieldName=parent
+columnName=parent_id
+foreign=true
+foreignAutoRefresh=true
+foreignAutoCreate=true
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=com.join.android.app.common.db.tables.Course
+tableName=course
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=lastLearn
+# --field-end--
+# --field-start--
+fieldName=learningTimes
+# --field-end--
+# --field-start--
+fieldName=title
+# --field-end--
+# --field-start--
+fieldName=totalDuration
+# --field-end--
+# --field-start--
+fieldName=courseId
+# --field-end--
+# --field-start--
+fieldName=courseHour
+# --field-end--
+# --field-start--
+fieldName=url
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=com.join.android.app.common.db.tables.Live
+tableName=live
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=liveId
+indexName=live_liveId_idx
+# --field-end--
+# --field-start--
+fieldName=title
+# --field-end--
+# --field-start--
+fieldName=createTime
+# --field-end--
+# --field-start--
+fieldName=author
+# --field-end--
+# --field-start--
+fieldName=url
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=com.join.android.app.common.db.tables.LocalCourse
+tableName=localcourse
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=learningTimes
+# --field-end--
+# --field-start--
+fieldName=title
+# --field-end--
+# --field-start--
+fieldName=courseId
+# --field-end--
+# --field-start--
+fieldName=url
+# --field-end--
+# --field-start--
+fieldName=chapters
+foreignCollection=true
+foreignCollectionEager=true
+# --field-end--
+# --field-start--
+fieldName=references
+foreignCollection=true
+foreignCollectionEager=true
+# --field-end--
+# --field-start--
+fieldName=branch
+# --field-end--
+# --field-start--
+fieldName=createTime
+# --field-end--
+# --field-start--
+fieldName=courseHour
+# --field-end--
+# --field-start--
+fieldName=validUntil
+# --field-end--
+# --field-start--
+fieldName=description
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=com.join.android.app.common.db.tables.Notice
+tableName=notice
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=content
+# --field-end--
+# --field-start--
+fieldName=createTime
+# --field-end--
+# --field-start--
+fieldName=title
+# --field-end--
+# --field-start--
+fieldName=noticeId
+# --field-end--
+# --field-start--
+fieldName=validUntil
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=com.join.android.app.common.db.tables.Order
+tableName=t_order
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=name
+# --field-end--
+# --field-start--
+fieldName=date
+# --field-end--
+# --field-start--
+fieldName=account
+columnName=account_id
+foreign=true
+foreignAutoRefresh=true
+foreignAutoCreate=true
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=com.join.android.app.common.db.tables.Reference
+tableName=reference
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=referenceId
+indexName=reference_referenceId_idx
+# --field-end--
+# --field-start--
+fieldName=title
+indexName=reference_title_idx
+# --field-end--
+# --field-start--
+fieldName=fileSize
+indexName=reference_fileSize_idx
+# --field-end--
+# --field-start--
+fieldName=type
+indexName=reference_type_idx
+# --field-end--
+# --field-start--
+fieldName=url
+indexName=reference_url_idx
+# --field-end--
+# --field-start--
+fieldName=localCourse
+columnName=localcourse_id
+foreign=true
+foreignAutoRefresh=true
+foreignAutoCreate=true
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=com.join.android.app.common.db.tables.ResourceShare
+tableName=resource_share
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=fileSize
+# --field-end--
+# --field-start--
+fieldName=rsId
+# --field-end--
+# --field-start--
+fieldName=name
+# --field-end--
+# --field-start--
+fieldName=type
+# --field-end--
+# --field-start--
+fieldName=url
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
