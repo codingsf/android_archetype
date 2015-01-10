@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:porterduff="http://schemas.android.com/apk/res/com.kingnet.android.app.mugo"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg">
+
+    <!--头-->
+    <RelativeLayout
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+        <ImageView
+                android:id="@+id/mlogo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/title_logo"
+                android:layout_centerVertical="true"
+                android:scaleType="fitXY"
+                />
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_toRightOf="@+id/mlogo"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dp"
+                android:visibility="gone">
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="@string/mu"
+                      android:textSize="19sp"
+                      android:textColor="@color/white"
+                      android:layout_marginBottom="10dp"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="@string/mu_accelerator"
+                      android:textSize="15sp"
+                      android:textColor="#aaaaa7"/>
+
+        </LinearLayout>
+
+        <ImageView android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:src="@drawable/icon"
+                   android:layout_alignParentRight="true"
+                   android:visibility="gone"/>
+    </RelativeLayout>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical"
+                  android:layout_below="@+id/title"
+                  android:layout_above="@+id/btnDownload">
+        <!--文字-->
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="0dp"
+                  android:text="十年奇迹      回归经典"
+                  android:textColor="#a7aaaa"
+                  android:textSize="25sp"
+                  android:layout_gravity="center_horizontal"
+                  android:gravity="center"
+                  android:layout_weight="2"/>
+
+        <!--中间图片内容-->
+        <LinearLayout
+                android:id="@+id/prettyContainer"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                android:layout_weight="6"
+                >
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                          android:layout_weight="1"></LinearLayout>
+
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent"
+                          android:layout_weight="8"
+                          android:gravity="center">
+                <com.join.android.app.mugo.view.PorterDuffView
+                        android:id="@+id/pretty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/pretty"
+                        porterduff:porterduffMode="true"/>
+            </LinearLayout>
+
+
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                          android:layout_weight="1"></LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="0dp"
+                      android:orientation="vertical"
+                      android:layout_weight="2">
+            <!--加速下载进行中-->
+            <TextView
+                    android:id="@+id/download_now"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/download_now"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:textSize="19sp"
+                    android:textColor="#616464"/>
+
+            <!--下载速度&大小-->
+            <TextView
+                    android:id="@+id/speed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="10dp"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <!--底部文字提示-->
+    <TextView
+            android:id="@+id/txtSuggest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/suggest_wifi"
+            android:textColor="#4f4f4f"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="5dp"/>
+
+    <!--wifi-->
+    <ImageView
+            android:id="@+id/btnDownload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/pause_download"
+            android:layout_above="@+id/txtSuggest"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"/>
+
+
+
+</RelativeLayout>

@@ -14,14 +14,14 @@ import com.nostra13.universalimageloader.utils.MemoryCacheUtils;
 public class CacheManager {
     public static void clearAll(Context context) {
         ImageLoader.getInstance().clearMemoryCache();
-        ImageLoader.getInstance().clearDiscCache();
+        ImageLoader.getInstance().clearDiskCache();
     }
 
 
     public static void clear(String url) {
 
         MemoryCacheUtils.removeFromCache(url, ImageLoader.getInstance().getMemoryCache());
-        DiskCacheUtils.removeFromCache(url, ImageLoader.getInstance().getDiscCache());
+        DiskCacheUtils.removeFromCache(url, ImageLoader.getInstance().getDiskCache());
 
     }
 }

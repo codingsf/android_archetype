@@ -5,7 +5,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import com.BaseActivity;
-import com.join.android.app.mgps.R;
+import com.kingnet.android.app.mugo.R;
 import com.join.android.app.common.adapter.SampleListDetailAdapter;
 import com.join.android.app.common.utils.CacheManager;
 import com.join.android.app.common.utils.ImageOptionFactory;

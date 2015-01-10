@@ -4,7 +4,7 @@ import android.util.Log;
 import android.widget.TextView;
 import com.BaseActivity;
 import com.j256.ormlite.dao.CloseableIterable;
-import com.join.android.app.mgps.R;
+import com.kingnet.android.app.mugo.R;
 import com.join.android.app.common.db.manager.AccountManager;
 import com.join.android.app.common.db.manager.OrderManager;
 import com.join.android.app.common.db.tables.Account;

@@ -3,6 +3,7 @@ package com.php25.PDownload;
 import android.content.Context;
 import android.content.Intent;
 import android.nfc.Tag;
+import android.os.Environment;
 import android.util.Log;
 import com.join.android.app.common.constants.BroadcastAction;
 import com.join.android.app.common.enums.Dtype;
@@ -75,14 +76,18 @@ public class DownloadManager {
     public DownloadManager(DownloadHandler downloadHandler, Context context) {
         this.downloadHandler = downloadHandler;
         this.context = context;
-        this.basePath = context.getExternalFilesDir("").getAbsolutePath();
+        this.basePath = Environment.getExternalStorageDirectory()+"/Android/data/"+context.getPackageName()+"/files";
+//        this.basePath = context.getExternalFilesDir("").getAbsolutePath();
+
         this.setStopped(true);
 //        app = (DownloadApplication) context.getApplicationContext();
     }
 
     public DownloadManager(Context context) {
         this.context = context;
-        this.basePath = context.getExternalFilesDir("").getAbsolutePath();
+//        this.basePath = context.getExternalFilesDir("").getAbsolutePath();
+        String a = context.getExternalFilesDir("").getAbsolutePath();
+        this.basePath = Environment.getExternalStorageDirectory()+"/Android/data/"+context.getPackageName()+"/files";
         this.setStopped(true);
 //        app = (DownloadApplication) context.getApplicationContext();
     }
@@ -146,6 +151,7 @@ public class DownloadManager {
 
                         if(temp.getTotalSize()==ff.length()){
                             temp.setFinished(true);
+                            temp.setPercent("100%");
                             temp.setFinishTime(DateUtils.FormatForNormalTimeFromMil(System.currentTimeMillis()));
                             downloadFileDao.update(temp);
                             DownloadCoreServiceHelper.removeDownloadManager(temp.getTag());
@@ -201,6 +207,11 @@ public class DownloadManager {
                         Intent intent = new Intent(BroadcastAction.ACTION_DOWNLOAD_COMPLETE);
                         intent.putExtra("file",temp);
                         context.sendBroadcast(intent);
+                        //
+                        if (downloadHandler!=null&&isFinished()) {
+                            downloadHandler.finished();
+                            Log.v(TAG, "download has finished!!");
+                        }
                     }
                     in.close();
                     out.close();
@@ -266,8 +277,15 @@ public class DownloadManager {
             @Override
             public void run() {
                 try {
-                    while (!isFinished() && !stopped) {
+                    while (!stopped) {
+
                         if (null != downloadHandler) {
+                            if (isFinished()) {
+                                    downloadHandler.finished();
+                                Log.v(TAG, "download has finished!!");
+                                break;
+                            }
+
                             float filelength = downloadFile.length();
 
                             if (file.getTotalSize() == null || new Float(file.getTotalSize()) == 0) {
@@ -279,11 +297,7 @@ public class DownloadManager {
                         }
                         Thread.sleep(2000);
                     }
-                    if (isFinished()) {
-                        if (null != downloadHandler)
-                            downloadHandler.finished();
-                        Log.v(TAG, "download has finished!!");
-                    }
+
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                     throw new RuntimeException(e);

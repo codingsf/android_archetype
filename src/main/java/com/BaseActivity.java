@@ -43,6 +43,7 @@ public class BaseActivity extends Activity {
     }
 
     public void showLoading() {
+        if(loading==null||loading.isShowing())return;
         loading = new CommonDialogLoading(this);
         loading.show();
     }

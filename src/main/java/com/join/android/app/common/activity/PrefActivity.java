@@ -2,7 +2,7 @@ package com.join.android.app.common.activity;
 
 import android.widget.TextView;
 import com.BaseActivity;
-import com.join.android.app.mgps.R;
+import com.kingnet.android.app.mugo.R;
 import com.join.android.app.common.pref.MyPref_;
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;

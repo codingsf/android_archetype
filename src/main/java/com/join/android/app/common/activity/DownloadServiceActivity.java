@@ -8,7 +8,7 @@ import com.join.android.app.common.adapter.DownloadedListAdapter;
 import com.join.android.app.common.constants.BroadcastAction;
 import com.join.android.app.common.enums.Dtype;
 import com.join.android.app.common.utils.APKUtils;
-import com.join.android.app.mgps.R;
+import com.kingnet.android.app.mugo.R;
 import com.php25.PDownload.DownloadFile;
 import com.php25.PDownload.DownloadFileDao;
 import com.php25.PDownload.DownloadTool;

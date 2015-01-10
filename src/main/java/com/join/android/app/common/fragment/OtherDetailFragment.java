@@ -2,7 +2,7 @@ package com.join.android.app.common.fragment;
 
 import android.support.v4.app.Fragment;
 import android.widget.TextView;
-import com.join.android.app.mgps.R;
+import com.kingnet.android.app.mugo.R;
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EFragment;
 import org.androidannotations.annotations.ViewById;

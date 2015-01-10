@@ -2,7 +2,7 @@ package com.join.android.app.common.activity;
 
 import android.widget.ImageView;
 import com.BaseActivity;
-import com.join.android.app.mgps.R;
+import com.kingnet.android.app.mugo.R;
 import com.join.android.app.common.utils.BitMapUtils;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import org.androidannotations.annotations.AfterViews;

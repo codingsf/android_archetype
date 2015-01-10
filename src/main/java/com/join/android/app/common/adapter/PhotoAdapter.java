@@ -10,7 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.join.android.app.mgps.R;
+import com.kingnet.android.app.mugo.R;
 import com.join.android.app.common.data.ImageInfo;
 import com.join.android.app.common.manager.DialogManager;
 import com.join.android.app.common.utils.BitMapUtils;
@@ -53,24 +53,24 @@ public class PhotoAdapter extends BaseAdapter {
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder holder;
-        if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(
-                    R.layout.photo_item, null);
-            holder = new ViewHolder();
-            holder.image = (ImageView) convertView
-                    .findViewById(R.id.photo_item_img);
-            holder.image.setLayoutParams(layoutParams);
-            holder.description = (TextView) convertView
-                    .findViewById(R.id.photo_item_description);
-            convertView.setTag(holder);
-        } else {
-            holder = (ViewHolder) convertView.getTag();
-        }
-        ImageInfo info = mResults.get(position);
-        holder.image.setImageBitmap(BitMapUtils.getBitmap(context, info.getFirstPath(), layoutParams.width, layoutParams.width));
-        holder.description.setText(info.getDisplayName() + "("
-                + info.getTag().size() + ")");
+//        ViewHolder holder;
+//        if (convertView == null) {
+//            convertView = LayoutInflater.from(context).inflate(
+//                    R.layout.photo_item, null);
+//            holder = new ViewHolder();
+//            holder.image = (ImageView) convertView
+//                    .findViewById(R.id.photo_item_img);
+//            holder.image.setLayoutParams(layoutParams);
+//            holder.description = (TextView) convertView
+//                    .findViewById(R.id.photo_item_description);
+//            convertView.setTag(holder);
+//        } else {
+//            holder = (ViewHolder) convertView.getTag();
+//        }
+//        ImageInfo info = mResults.get(position);
+//        holder.image.setImageBitmap(BitMapUtils.getBitmap(context, info.getFirstPath(), layoutParams.width, layoutParams.width));
+//        holder.description.setText(info.getDisplayName() + "("
+//                + info.getTag().size() + ")");
         return convertView;
     }
 

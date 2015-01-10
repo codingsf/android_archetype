@@ -64,4 +64,10 @@
             android:layout_height="wrap_content"
             android:text="installInSilence"/>
 
+    <Button
+            android:id="@+id/photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="相册"/>
+
 </LinearLayout>

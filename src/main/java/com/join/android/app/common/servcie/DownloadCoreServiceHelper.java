@@ -1,6 +1,7 @@
 package com.join.android.app.common.servcie;
 
 import com.php25.PDownload.DownloadManager;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -26,16 +27,19 @@ public class DownloadCoreServiceHelper {
     public static Map<String,Future> futureMap = new HashMap<String, Future>(0);
     public static Map<String, com.php25.PDownload.DownloadManager> map = new ConcurrentHashMap<String, DownloadManager>();
     public static void addDownloadManager(String key, DownloadManager downloadManager) {
+        if(StringUtils.isEmpty(key))return;
         map.put(key, downloadManager);
     }
 
     public static DownloadManager getDownloadManager(String key) {
+        if(map==null||key==null)return null;
         return map.get(key);
     }
 
 
 
     public static boolean containsDownloadManager(String key) {
+        if(StringUtils.isEmpty(key))return false;
         return map.containsKey(key);
     }
 

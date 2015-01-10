@@ -3,7 +3,7 @@ package com.join.android.app.common.view;
 import android.graphics.*;
 import android.graphics.drawable.Drawable;
 import android.view.View;
-import com.join.android.app.mgps.R;
+import com.kingnet.android.app.mugo.R;
 
 // This class is used by CropImage to display a highlighted cropping rectangle
 // overlayed with the image. There are two coordinate spaces in use. One is
@@ -29,9 +29,9 @@ public class HighlightView {
     private void init() {
         android.content.res.Resources resources = mContext.getResources();
         mResizeDrawableDiagonal = resources
-                .getDrawable(R.drawable.picture_cut_button_normal);
+                .getDrawable(R.drawable.icon);
         mResizeDrawableDiagonal2 = resources
-                .getDrawable(R.drawable.picture_cut_button_normal);
+                .getDrawable(R.drawable.icon);
     }
 
     public boolean mIsFocused;

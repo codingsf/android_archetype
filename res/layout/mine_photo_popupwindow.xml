@@ -27,7 +27,7 @@
         <Button
                 android:id="@+id/btn_protograph"
                 style="@style/FillParentWidthStyle"
-                android:background="@drawable/photo_btn"
+                android:background="@drawable/icon"
                 android:padding="10dp"
                 android:text="@string/photograph"
                 android:textColor="@color/white"
@@ -37,7 +37,7 @@
         <Button
                 android:id="@+id/btn_nativ_pic"
                 style="@style/FillParentWidthStyle"
-                android:background="@drawable/photo_btn"
+                android:background="@drawable/icon"
                 android:text="@string/select_nativ_pic"
                 android:textColor="@color/white"
                 android:padding="10dp"

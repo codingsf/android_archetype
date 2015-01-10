@@ -20,4 +20,8 @@
         </attr>
     </declare-styleable>
 
+    <declare-styleable name="PorterDuffView">
+        <attr name="porterduffMode" format="boolean"></attr>
+    </declare-styleable>
+
 </resources>

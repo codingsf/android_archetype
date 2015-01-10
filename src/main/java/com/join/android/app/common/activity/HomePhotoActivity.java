@@ -9,10 +9,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
-import com.join.android.app.mgps.R;
 import com.join.android.app.common.adapter.PhotoAdapter;
 import com.join.android.app.common.data.ImageInfo;
 import com.join.android.app.common.manager.DialogManager;
+import com.kingnet.android.app.mugo.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;

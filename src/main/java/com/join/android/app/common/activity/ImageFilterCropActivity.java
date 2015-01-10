@@ -10,12 +10,12 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ProgressBar;
-import com.join.android.app.mgps.R;
 import com.join.android.app.common.manager.DialogManager;
 import com.join.android.app.common.manager.FileManager;
 import com.join.android.app.common.utils.BitMapUtils;
 import com.join.android.app.common.view.CropImage;
 import com.join.android.app.common.view.CropImageView;
+import com.kingnet.android.app.mugo.R;
 
 import java.io.*;
 
@@ -42,21 +42,21 @@ public class ImageFilterCropActivity extends Activity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.imagefilter_crop_activity);
+//        setContentView(R.layout.imagefilter_crop_activity);
 
-        findViewById();
+//        findViewById();
         setListener();
         init();
     }
 
-    private void findViewById() {
-        mCancel = (Button) findViewById(R.id.imagefilter_crop_cancel);
-        mDetermine = (Button) findViewById(R.id.imagefilter_crop_determine);
-        mDisplay = (CropImageView) findViewById(R.id.imagefilter_crop_display);
-        mProgressBar = (ProgressBar) findViewById(R.id.imagefilter_crop_progressbar);
-        mLeft = (Button) findViewById(R.id.imagefilter_crop_left);
-        mRight = (Button) findViewById(R.id.imagefilter_crop_right);
-    }
+//    private void findViewById() {
+//        mCancel = (Button) findViewById(R.id.imagefilter_crop_cancel);
+//        mDetermine = (Button) findViewById(R.id.imagefilter_crop_determine);
+//        mDisplay = (CropImageView) findViewById(R.id.imagefilter_crop_display);
+//        mProgressBar = (ProgressBar) findViewById(R.id.imagefilter_crop_progressbar);
+//        mLeft = (Button) findViewById(R.id.imagefilter_crop_left);
+//        mRight = (Button) findViewById(R.id.imagefilter_crop_right);
+//    }
 
     //保存裁剪后的图片到本地
     public String saveCutPic(Bitmap bitmap) {

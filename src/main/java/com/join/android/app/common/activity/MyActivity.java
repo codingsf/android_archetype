@@ -15,7 +15,7 @@ import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.join.android.app.mgps.R;
+import com.kingnet.android.app.mugo.R;
 import org.androidannotations.annotations.*;
 import org.androidannotations.annotations.res.BooleanRes;
 import org.androidannotations.annotations.res.ColorRes;
@@ -38,9 +38,6 @@ public class MyActivity extends Activity {
 
     @ColorRes
     int androidColor;
-
-    @BooleanRes
-    boolean someBoolean;
 
     @SystemService
     NotificationManager notificationManager;

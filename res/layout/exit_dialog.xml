@@ -17,7 +17,7 @@
             android:text="@string/cancel_confirm"
             android:textSize="16sp"/>
 
-    <include
-            style="@style/AlertFootInclude"
-            layout="@layout/alert_foot_view"/>
+    <!--<include-->
+            <!--style="@style/AlertFootInclude"-->
+            <!--layout="@layout/alert_foot_view"/>-->
 </LinearLayout>

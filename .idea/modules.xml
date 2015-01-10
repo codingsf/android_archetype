@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/android_archetype.iml" filepath="$PROJECT_DIR$/android_archetype.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mugo.iml" filepath="$PROJECT_DIR$/mugo.iml" />
     </modules>
   </component>
 </project>

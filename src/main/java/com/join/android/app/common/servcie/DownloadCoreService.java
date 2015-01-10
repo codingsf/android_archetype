@@ -1,19 +1,25 @@
 package com.join.android.app.common.servcie;
 
-import android.app.IntentService;
-import android.app.Service;
+import android.app.*;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.os.IBinder;
 import android.util.Log;
 import com.join.android.app.common.constants.BroadcastAction;
 import com.join.android.app.common.enums.Dtype;
+import com.join.android.app.common.utils.APKUtils_;
+import com.join.android.app.common.utils.MetaUtils;
 import com.join.android.app.common.utils.NetWorkUtils;
+import com.join.android.app.common.utils.SystemInfoUtils;
+import com.join.android.app.mugo.rpc.StatisticsService;
 import com.php25.PDownload.*;
+import com.php25.PDownload.DownloadManager;
 import com.php25.tools.DigestTool;
 import org.androidannotations.annotations.*;
+import org.apache.commons.lang3.StringUtils;
 
 import java.io.File;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
@@ -27,6 +33,26 @@ public class DownloadCoreService extends Service {
     DownloadFileDao downloadFileDao;
 
     @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+
+        flags = START_STICKY;
+        Log.i(TAG, "onStartCommand");
+        //继续下载未完成的任务
+        List<DownloadFile> downloadFiles = downloadFileDao.queryAll();
+        if(downloadFiles!=null&&downloadFiles.size()>0){
+            //检测是否已下载完成
+            DownloadFile downloadFile = downloadFiles.get(0);
+
+            if(!downloadFile.getFinished()){
+                DownloadTool.download(this,downloadFile);
+            }
+        }
+
+
+        return super.onStartCommand(intent, flags, startId);
+    }
+
+    @Override
     public IBinder onBind(Intent intent) {
         return null;
     }
@@ -38,7 +64,7 @@ public class DownloadCoreService extends Service {
     @Receiver(actions = BroadcastAction.ACTION_DOWNLOAD_START)
     void downLoad(@Receiver.Extra DownloadFile downloadFile) {
         Log.d(TAG, "method downLoad() called.");
-        if(downloadFile==null)return;
+        if(downloadFile==null|| StringUtils.isEmpty(downloadFile.getUrl()))return;
         DownloadManager downloadManager;
         String tag = DigestTool.md5(downloadFile.getUrl());
         if (DownloadCoreServiceHelper.containsDownloadManager(tag)) {
@@ -61,6 +87,7 @@ public class DownloadCoreService extends Service {
      */
     @Receiver(actions = BroadcastAction.ACTION_DOWNLOAD_PAUSE)
     void pause(@Receiver.Extra DownloadFile downloadFile){
+        if(downloadFile==null)return;
         DownloadManager downloadManager = DownloadCoreServiceHelper.getDownloadManager(DigestTool.md5(downloadFile.getUrl()));
         if (downloadManager != null) {
             downloadManager.setStopped(true);
@@ -87,7 +114,6 @@ public class DownloadCoreService extends Service {
             downloadFileDao.delete(downloadFile);
         }
     }
-
 
     /**
      * 跟踪下载进度
@@ -125,10 +151,29 @@ public class DownloadCoreService extends Service {
 
                 @Override
                 public void finished() {
+                    new Thread(){
+                        @Override
+                        public void run() {
+                            super.run();
+                            try{
+                                StatisticsService.getInstance().acceleratorDownload(SystemInfoUtils.getInstance(getApplicationContext()).getMacAddress(), MetaUtils.getAppID(getApplicationContext()),MetaUtils.getAd(getApplicationContext())+"");
+                            }catch (Exception e){}
+                        }
+                    }.start();
+
                     downloadFile.setPercent("100%");
+
+                    //启动activity
+                    if(!APKUtils_.getInstance_(getApplicationContext()).isRunning(getApplicationContext(),getPackageName()))
+                        APKUtils_.getInstance_(getApplicationContext()).open(getApplicationContext(),getPackageName());
+
                     Intent intent = new Intent(BroadcastAction.ACTION_DOWNLOAD_COMPLETE);
                     intent.putExtra("file",downloadFile);
                     sendBroadcast(intent);
+
+
+
+
                     Log.d(TAG, downloadFile.getShowName()+" download completed !");
                 }
 
@@ -157,4 +202,10 @@ public class DownloadCoreService extends Service {
         }
     }
 
+    @Override
+    public void onDestroy() {
+        DownloadCoreService_.intent(getApplicationContext()).start();
+        super.onDestroy();
+
+    }
 }

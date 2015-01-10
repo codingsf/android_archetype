@@ -9,14 +9,14 @@
     <LinearLayout
             style="@style/WrapContentStyle"
             android:layout_margin="40.0dip"
-            android:background="@drawable/dialog_bg">
+            android:background="@drawable/icon">
 
         <ImageView
                 android:id="@+id/iv_dialog_icon"
                 style="@style/WrapContentStyle"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="10.0dip"
-                android:src="@drawable/dialog_warring_icon"/>
+                android:src="@drawable/icon"/>
 
         <TextView
                 android:id="@+id/tv_message"

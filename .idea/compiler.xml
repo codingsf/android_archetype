@@ -25,13 +25,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="android_archetype" />
         <module name="mg_ps" />
         <module name="ott" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="mg_ps" target="1.6" />
-      <module name="ott" target="1.6" />
-    </bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.6" />
   </component>
 </project>

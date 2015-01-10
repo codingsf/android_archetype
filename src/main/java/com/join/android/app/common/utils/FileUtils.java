@@ -15,7 +15,8 @@ public class FileUtils {
      * @return
      */
     public static String FormatFileSize(long fileS) {// 转换文件大小
-        DecimalFormat df = new DecimalFormat("#.0");
+//        DecimalFormat df = new DecimalFormat("#.0");
+        DecimalFormat df = new DecimalFormat("#");
         String fileSizeString = "";
         if (fileS < 1024) {
             fileSizeString = df.format((double) fileS) + "B";

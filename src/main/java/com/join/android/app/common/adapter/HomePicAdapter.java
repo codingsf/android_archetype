@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import com.join.android.app.mgps.R;
+import com.kingnet.android.app.mugo.R;
 import com.join.android.app.common.manager.DialogManager;
 import com.join.android.app.common.manager.PhotoManager;
 import com.join.android.app.common.manager.TaskManager;
@@ -74,24 +74,24 @@ public class HomePicAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
         if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.album_activity_item, null);
-            holder = new ViewHolder();
-            holder.photo = (ImageView) convertView.findViewById(R.id.album_item_photo);
-            holder.select = (ImageView) convertView.findViewById(R.id.album_item_select);
-            holder.photo.setLayoutParams(params);
-            holder.select.setLayoutParams(params);
-            convertView.setTag(holder);
+//            convertView = LayoutInflater.from(context).inflate(R.layout.album_activity_item, null);
+//            holder = new ViewHolder();
+//            holder.photo = (ImageView) convertView.findViewById(R.id.album_item_photo);
+//            holder.select = (ImageView) convertView.findViewById(R.id.album_item_select);
+//            holder.photo.setLayoutParams(params);
+//            holder.select.setLayoutParams(params);
+//            convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
         url = path.get(position);
-        holder.photo.setTag(url);
+//        holder.photo.setTag(url);
         bitmap = mMemoryCache.get(url);
-        if (bitmap != null)
-            holder.photo.setImageBitmap(bitmap);
-        else
-            TaskManager.getInstance().submit(new BitmapWorkerTask(convertView), url);
-        holder.select.setVisibility(mSelect.contains(String.valueOf(position)) ? View.VISIBLE : View.GONE);
+//        if (bitmap != null)
+//            holder.photo.setImageBitmap(bitmap);
+//        else
+//            TaskManager.getInstance().submit(new BitmapWorkerTask(convertView), url);
+//        holder.select.setVisibility(mSelect.contains(String.valueOf(position)) ? View.VISIBLE : View.GONE);
         return convertView;
     }
 

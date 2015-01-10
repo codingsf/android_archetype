@@ -32,10 +32,10 @@ public class MApplication extends Application {
                 .denyCacheImageMultipleSizesInMemory()
                 .memoryCache(new LruMemoryCache(2 * 1024 * 1024))
                 .memoryCacheSize(2 * 1024 * 1024)
-                .discCacheSize(50 * 1024 * 1024)
-                .discCacheFileCount(100)
+                .diskCacheSize(50 * 1024 * 1024)
+                .diskCacheFileCount(100)
 //                .writeDebugLogs()
-                .discCacheFileNameGenerator(new Md5FileNameGenerator())
+                .diskCacheFileNameGenerator(new Md5FileNameGenerator())
                 .defaultDisplayImageOptions(ImageOptionFactory.getDefaultOptions())
                 .build();
         ImageLoader.getInstance().init(config);

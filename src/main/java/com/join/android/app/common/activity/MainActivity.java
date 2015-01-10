@@ -7,7 +7,7 @@ import android.widget.Button;
 import com.BaseActivity;
 import com.join.android.app.common.servcie.DownloadCoreService;
 import com.join.android.app.common.servcie.DownloadCoreService_;
-import com.join.android.app.mgps.R;
+import com.kingnet.android.app.mugo.R;
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
@@ -101,6 +101,11 @@ public class MainActivity extends BaseActivity {
     @Click
     void installInSilenceClicked(){
 
+    }
+
+    @Click
+    void photoClicked(){
+        PhotoSelectActivity_.intent(this).start();
     }
 
 }

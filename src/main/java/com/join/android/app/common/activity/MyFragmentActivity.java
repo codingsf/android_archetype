@@ -5,7 +5,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.widget.Button;
-import com.join.android.app.mgps.R;
+import com.kingnet.android.app.mugo.R;
 import com.join.android.app.common.fragment.DetailFragment_;
 import com.join.android.app.common.fragment.OtherDetailFragment_;
 import org.androidannotations.annotations.AfterViews;

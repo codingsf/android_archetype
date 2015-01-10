@@ -12,7 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.*;
-import com.join.android.app.mgps.R;
+import com.kingnet.android.app.mugo.R;
 
 public class DialogManager {
     private static DialogManager manager;
@@ -55,8 +55,8 @@ public class DialogManager {
         tvMessage = (TextView) viewDialog.findViewById(R.id.tv_dialog_content);
         tvTitle.setText(title);
         tvMessage.setText(message);
-        btnCancel = (Button) viewDialog.findViewById(R.id.btn_dialog_cancel);
-        btnOk = (Button) viewDialog.findViewById(R.id.btn_dialog_ok);
+//        btnCancel = (Button) viewDialog.findViewById(R.id.btn_dialog_cancel);
+//        btnOk = (Button) viewDialog.findViewById(R.id.btn_dialog_ok);
         popupWindow = new PopupWindow(viewDialog, LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
         setPopupWindow();
         handler.sendEmptyMessage(0);
@@ -86,11 +86,11 @@ public class DialogManager {
         tvMessage.setText(message);
         ImageView ivIcon = (ImageView) viewDialog.findViewById(R.id.iv_dialog_icon);
         if (dialogType == DialogManager.DIALOG_TYPE_ERROR) {
-            ivIcon.setImageResource(R.drawable.dialog_error_icon);
+            ivIcon.setImageResource(R.drawable.icon);
         } else if (dialogType == DialogManager.DIALOG_TYPE_OK) {
-            ivIcon.setImageResource(R.drawable.dialog_ok_icon);
+            ivIcon.setImageResource(R.drawable.icon);
         } else if (dialogType == DialogManager.DIALOG_TYPE_WARRING) {
-            ivIcon.setImageResource(R.drawable.dialog_warring_icon);
+            ivIcon.setImageResource(R.drawable.icon);
         }
         result.setView(viewDialog);
         //setGravity方法用于设置位置，此处为垂直居中

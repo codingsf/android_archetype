@@ -1,7 +1,7 @@
 package com.join.android.app.common.activity;
 
 import com.BaseActivity;
-import com.join.android.app.mgps.R;
+import com.kingnet.android.app.mugo.R;
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
 

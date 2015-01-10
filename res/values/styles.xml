@@ -113,11 +113,11 @@
         <item name="android:textSize">18sp</item>
         <item name="android:padding">4dp</item>
     </style>
-    <style name="RatingBarStyle" parent="android:style/Widget.RatingBar">
-        <item name="android:progressDrawable">@drawable/ratingbar_drawable</item>
-        <item name="android:minHeight">40dip</item>
-        <item name="android:maxHeight">40dip</item>
-    </style>
+    <!--<style name="RatingBarStyle" parent="android:style/Widget.RatingBar">-->
+        <!--<item name="android:progressDrawable">@drawable/ratingbar_drawable</item>-->
+        <!--<item name="android:minHeight">40dip</item>-->
+        <!--<item name="android:maxHeight">40dip</item>-->
+    <!--</style>-->
 
 
 </resources>

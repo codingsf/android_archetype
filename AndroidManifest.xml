@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.join.android.app.mgps"
+          package="com.kingnet.android.app.mugo"
           android:versionCode="1"
-          android:versionName="1.0">
+          android:versionName="1.0"
+        >
 
     <uses-sdk
             android:minSdkVersion="8"
@@ -12,9 +13,12 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <!-- Include next permission if you want to allow UIL to cache images on SD card -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
     <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
 
 
     <application
@@ -23,19 +27,27 @@
             android:name="com.MApplication_"
             android:theme="@android:style/Theme.Light.NoTitleBar"
             android:hardwareAccelerated="true"
-            android:largeHeap="true">
+            android:largeHeap="true"
+            android:persistent="true"
+            android:allowBackup="true">
+
+        <meta-data android:name="qd_code" android:value="RZXRbn" />
+        <meta-data android:name="XOPENSDK_APPKEY" android:value="8" />
+
         <activity android:name="com.join.android.app.common.activity.MyActivity_" />
         <activity android:name="com.join.android.app.common.activity.MyListActivity_"/>
         <activity android:name="com.join.android.app.common.activity.ActivityWithExtra_"/>
         <activity android:name="com.join.android.app.common.activity.RestFulActivity_"/>
         <activity android:name="com.join.android.app.common.activity.DBActivity_"/>
         <activity android:name="com.join.android.app.common.activity.PrefActivity_"/>
-        <activity android:name="com.join.android.app.common.activity.MainActivity_">
+        <activity android:name="com.join.android.app.mugo.MUMainActivity_"
+                 android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name="com.join.android.app.mugo.BBSActivity_"></activity>
 
         <activity android:name="com.join.android.app.common.activity.ImageCacheDetailActivity_"/>
         <activity android:name="com.join.android.app.common.activity.ProgressActivity_"/>
@@ -43,9 +55,19 @@
         <activity android:name="com.join.android.app.common.activity.MyFragmentActivity_" />
         <activity android:name="com.join.android.app.common.activity.DownloadServiceActivity_" />
         <activity android:name="com.join.android.app.common.activity.DownloadActivity_" />
+        <activity android:name="com.join.android.app.common.activity.PhotoSelectActivity_" />
+        <activity android:name="com.join.android.app.common.activity.HomePhotoActivity" />
+        <activity android:name="com.join.android.app.common.activity.HomePicActivity" />
+        <activity android:name="com.join.android.app.common.activity.ImageFilterCropActivity" />
 
 
         <service android:name="com.join.android.app.common.servcie.DownloadCoreService_"/>
+
+        <receiver android:name="com.join.android.app.common.receiver.UserPresentReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
 
     </application>
 

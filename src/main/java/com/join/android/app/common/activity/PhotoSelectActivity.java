@@ -4,8 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.widget.Button;
 import com.BaseActivity;
-import com.join.android.app.mgps.R;
 import com.join.android.app.common.manager.PhotoManager;
+import com.kingnet.android.app.mugo.R;
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
@@ -41,7 +41,7 @@ public class PhotoSelectActivity extends BaseActivity {
                 //do something .like upload photo
 //                TaskManager.getInstance().submit(new UploadPhotoFileTask(this, handler), photo, userInfo.getUserID());
             }
-        } else if (requestCode == PhotoManager.IMAGE_CODE) {
+        } else if (requestCode == PhotoManager.IMAGE_CODE) {//拍照
             PhotoManager.getInstance(this).cutPhoto(PhotoManager.getInstance(this).getFilePath(), this);
         } else if (resultCode == HomePicActivity.RESULT_CODE_OK) {
             PhotoManager.getInstance(this).cutPhoto(data.getStringExtra(HomePicActivity.SELECT_PHOTO_PIC_PATH), this);

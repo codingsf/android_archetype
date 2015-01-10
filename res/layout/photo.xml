@@ -15,7 +15,7 @@
                 android:id="@+id/btn_back"
                 style="@style/BarRightStyle"
                 android:onClick="exit"
-                android:background="@drawable/btn_cancel"/>
+                />
 
     </RelativeLayout>
 

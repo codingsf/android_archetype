@@ -1,6 +1,7 @@
 package com.join.android.app.common.utils;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
@@ -26,10 +27,26 @@ import java.util.List;
 public class APKUtils {
 
 
+    /**
+     * 打开某APK程序
+     * @param context
+     * @param pak
+     */
     public void open(Context context,String pak){
         PackageManager packageManager = context.getPackageManager();
         Intent intent = packageManager.getLaunchIntentForPackage(pak);
         context.startActivity(intent);
+    }
+
+    public boolean isRunning(Context context,String packageName){
+        ActivityManager am = (ActivityManager)context.getSystemService(Context.ACTIVITY_SERVICE);
+        List<ActivityManager.RunningTaskInfo> list = am.getRunningTasks(100);
+        for (ActivityManager.RunningTaskInfo info : list) {
+            if (info.topActivity.getPackageName().equals(packageName) && info.baseActivity.getPackageName().equals(packageName)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**

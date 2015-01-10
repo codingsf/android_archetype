@@ -11,7 +11,7 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.LinearInterpolator;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import com.join.android.app.mgps.R;
+import com.kingnet.android.app.mugo.R;
 
 /**
  * User: mawanjin@join-cn.com

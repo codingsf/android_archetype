@@ -5,7 +5,7 @@ import com.join.android.app.common.exception.RPCErrorHandler;
 import com.join.android.app.common.manager.DialogManager;
 import com.join.android.app.common.utils.NetWorkUtils;
 import com.join.android.app.common.utils.SystemInfoUtils;
-import com.join.android.app.mgps.R;
+import com.kingnet.android.app.mugo.R;
 import com.join.android.app.common.rest.BookmarkClient;
 import com.join.android.app.common.rest.RPCResult;
 import com.join.android.app.common.rest.dto.Recommend;

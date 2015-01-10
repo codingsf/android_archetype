@@ -5,7 +5,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import com.BaseActivity;
 import com.join.android.app.common.adapter.DownloadedListAdapter;
-import com.join.android.app.mgps.R;
+import com.kingnet.android.app.mugo.R;
 import com.php25.PDownload.DownloadFile;
 import com.php25.PDownload.DownloadHandler;
 import com.php25.PDownload.DownloadTool;
