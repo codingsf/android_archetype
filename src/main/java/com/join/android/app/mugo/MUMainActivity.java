@@ -136,7 +136,7 @@ String TAG = getClass().getSimpleName();
     @Background
     void ad(){
         try{
-            AD ad = murpcService.getAD();
+            AD ad = murpcService.getAD(MetaUtils.getAd(this));
             showAD(ad);
         }catch (RestClientException e){
 

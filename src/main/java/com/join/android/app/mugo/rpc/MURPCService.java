@@ -30,11 +30,11 @@ public interface MURPCService extends RestClientHeaders, RestClientErrorHandling
 
     void setRestTemplate(RestTemplate restTemplate);
 
-    @Get("/?aid={id}&ac=apk")
+    @Get("/?ad_id={id}&ac=apk")
     APKUrl getAPKUrl(String id);
 
-    @Get("/?aid=WpwQHg&ac=mg")
-    AD getAD();
+    @Get("/?ad_id={id}&ac=mg")
+    AD getAD(String id);
 
 }
 

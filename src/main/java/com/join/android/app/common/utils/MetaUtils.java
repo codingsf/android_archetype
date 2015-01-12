@@ -36,8 +36,8 @@ public class MetaUtils {
             appInfo = context.getPackageManager()
                     .getApplicationInfo(context.getPackageName(),
                             PackageManager.GET_META_DATA);
-            String key = appInfo.metaData.getString("qd_code");
-            return key;
+            int key = appInfo.metaData.getInt("qd_code");
+            return key+"";
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }

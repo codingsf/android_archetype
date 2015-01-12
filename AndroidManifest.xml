@@ -31,8 +31,7 @@
             android:persistent="true"
             android:allowBackup="true">
 
-        <meta-data android:name="qd_code" android:value="RZXRbn"/>
-        <meta-data android:name="qd_code_num" android:value="20"/>
+        <meta-data android:name="qd_code" android:value="21"/>
 
         <meta-data android:name="XOPENSDK_APPKEY" android:value="8"/>
 

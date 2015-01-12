@@ -1,7 +1,5 @@
 package com.join.android.app.mugo;
 
-import android.app.Activity;
-import android.graphics.Bitmap;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -13,8 +11,8 @@ import com.join.android.app.mugo.dto.AD;
 import com.join.android.app.mugo.rpc.MURPCService;
 import com.kingnet.android.app.mugo.R;
 import org.androidannotations.annotations.*;
-import org.androidannotations.annotations.rest.RestService;
 import org.apache.commons.lang3.StringUtils;
+import org.androidannotations.annotations.rest.RestService;
 
 /**
  * Created by lala on 15/1/9.
@@ -80,7 +78,7 @@ public class BBSActivity extends BaseActivity {
 
     @Background
     void ad(){
-        AD ad = murpcService.getAD();
+        AD ad = murpcService.getAD(MetaUtils.getAd(this));
         showAD(ad);
     }
 
