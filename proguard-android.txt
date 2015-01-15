@@ -19,6 +19,14 @@
 -keepattributes *Annotation*
 -keep public class com.google.vending.licensing.ILicensingService
 -keep public class com.android.vending.licensing.ILicensingService
+-keep public class com.MApplication
+-keep public class com.MApplication_
+-keep public class com.join.android.app.common.db.DatabaseHelper
+-keep public class com.join.android.app.common.db.manager.DBManager
+-keep public class com.join.android.app.mugo.MUMainActivity
+-keep public class com.join.android.app.mugo.rpc.MURPCService
+
+
 
 # For native methods, see http://proguard.sourceforge.net/manual/examples.html#native
 -keepclasseswithmembernames class * {
@@ -37,6 +45,8 @@
    public void *(android.view.View);
 }
 
+
+
 # For enumeration classes, see http://proguard.sourceforge.net/manual/examples.html#enumerations
 -keepclassmembers enum * {
     public static **[] values();
@@ -46,6 +56,13 @@
 -keep class * implements android.os.Parcelable {
   public static final android.os.Parcelable$Creator *;
 }
+
+-keep class org.codehaus.**{*;}
+-keep class com.join.android.app.mugo.dto.**{*;}
+
+-keepattributes Signature
+
+
 
 -keepclassmembers class **.R$* {
     public static <fields>;
@@ -60,3 +77,4 @@
 -dontskipnonpubliclibraryclasses
 -ignorewarnings
 -libraryjars lib/android-support-v4.jar
+-libraryjars lib/ptools-0.1-SNAPSHOT.jar

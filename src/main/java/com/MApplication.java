@@ -1,6 +1,7 @@
 package com;
 
 import android.app.Application;
+import android.content.Context;
 import com.join.android.app.common.db.manager.DBManager;
 import com.join.android.app.common.servcie.DownloadCoreService_;
 import com.join.android.app.common.utils.ImageOptionFactory;
@@ -17,11 +18,15 @@ import org.androidannotations.annotations.EApplication;
  */
 @EApplication
 public class MApplication extends Application {
+
+
+    public MApplication(){}
+
     @Override
     public void onCreate() {
         super.onCreate();
         initCache();
-        DBManager.getInstance(this).createDB("mg_ps");
+//        DBManager.getInstance(this).createDB("mg_ps");
         DownloadCoreService_.intent(getApplicationContext()).start();
     }
 

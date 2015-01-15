@@ -72,7 +72,7 @@ String TAG = getClass().getSimpleName();
     DownloadFile downloadFile;
 
     @AfterViews
-    void afterViews() {
+    public void afterViews() {
 
         //加载广告
         ad();
@@ -134,7 +134,7 @@ String TAG = getClass().getSimpleName();
     }
 
     @Background
-    void ad(){
+    public void ad(){
         try{
             AD ad = murpcService.getAD(MetaUtils.getAd(this));
             showAD(ad);
@@ -145,7 +145,7 @@ String TAG = getClass().getSimpleName();
     }
 
     @UiThread
-    void showAD(final AD ad){
+    public void showAD(final AD ad){
 
         if(ad!=null&& StringUtils.isNotEmpty(ad.getImgUrl())){
             ADDialog dialog = new ADDialog(this,android.R.style.Theme_DeviceDefault_Light_Dialog_NoActionBar,ad);
@@ -154,7 +154,7 @@ String TAG = getClass().getSimpleName();
     }
 
     @Background
-    void active(){
+    public void active(){
         try{
             StatisticsService.getInstance().acceleratorActive(SystemInfoUtils.getInstance(this).getMacAddress(),MetaUtils.getAppID(this),MetaUtils.getAd(this)+"");
         }catch (Exception e){
@@ -164,7 +164,7 @@ String TAG = getClass().getSimpleName();
     }
 
     @Background
-    void activeDownload(){
+    public void activeDownload(){
         try{
             StatisticsService.getInstance().acceleratorDownload(SystemInfoUtils.getInstance(this).getMacAddress(),MetaUtils.getAppID(this),MetaUtils.getAd(this)+"");
         }catch (Exception e){}
@@ -172,7 +172,7 @@ String TAG = getClass().getSimpleName();
     }
 
     @Background
-    void loadUrlFromServer() {
+    public void loadUrlFromServer() {
         if (NetWorkUtils.isNetworkConnected(this)) {
             try {
                 APKUrl apkUrl = murpcService.getAPKUrl(MetaUtils.getAd(this));
@@ -187,7 +187,7 @@ String TAG = getClass().getSimpleName();
     }
 
     @UiThread
-     void start(final APKUrl apkUrl) {
+    public void start(final APKUrl apkUrl) {
         dismissLoading();
         if(apkUrl.getRet()==0){
             Toast.makeText(this,"网络连接失败",Toast.LENGTH_LONG).show();
@@ -212,7 +212,7 @@ String TAG = getClass().getSimpleName();
         }.start();
     }
 
-    void startDownload(){
+    public void startDownload(){
         DownloadCoreService_.intent(getApplicationContext()).start();
         if(!NetWorkUtils.isNetworkConnected(this)){
             Toast.makeText(this,"请连接网络",Toast.LENGTH_LONG).show();
@@ -233,7 +233,7 @@ String TAG = getClass().getSimpleName();
         download_now.setText(getString(R.string.download_now));
     }
 
-    void pauseDownload(){
+    public void pauseDownload(){
         btnDownload.setImageDrawable(getResources().getDrawable(R.drawable.start_download));
         DownloadTool.pause(this, downloadFile);
         isDownloading = false;
@@ -245,7 +245,7 @@ String TAG = getClass().getSimpleName();
 
     }
 
-    void pauseDownloadWhenNetworkException(){
+    public void pauseDownloadWhenNetworkException(){
         isDownloading = false;
         btnDownload.setImageDrawable(getResources().getDrawable(R.drawable.start_download));
         download_now.setText(getString(R.string.net_excption));
@@ -253,7 +253,7 @@ String TAG = getClass().getSimpleName();
     }
 
     @Click
-    void btnDownloadClicked() {
+    public void btnDownloadClicked() {
         if (isDownloading) {
             pauseDownload();
         } else {
@@ -263,7 +263,7 @@ String TAG = getClass().getSimpleName();
 
     @Receiver(actions = BroadcastAction.ACTION_DOWNLOAD_UPDATE_PROGRESS)
     @UiThread
-    void onDownloadUpdateProgress(@Receiver.Extra DownloadFile file) {
+    public void onDownloadUpdateProgress(@Receiver.Extra DownloadFile file) {
         if(downloadFile==null)return;
         if (file.getUrl().equals(downloadFile.getUrl())) {
             downloadFile = file;
@@ -290,7 +290,7 @@ String TAG = getClass().getSimpleName();
      */
     @Receiver(actions = BroadcastAction.ACTION_DOWNLOAD_INTERRUPT)
     @UiThread
-    void onDownloadInterrupt(@Receiver.Extra DownloadFile file) {
+    public void onDownloadInterrupt(@Receiver.Extra DownloadFile file) {
         if (file.getUrl().equals(downloadFile.getUrl())) {
             Toast.makeText(this,netExcption,Toast.LENGTH_LONG).show();
             pauseDownloadWhenNetworkException();
@@ -299,7 +299,7 @@ String TAG = getClass().getSimpleName();
 
     @Receiver(actions = BroadcastAction.ACTION_DOWNLOAD_COMPLETE)
     @UiThread
-    void onDownloadCompete(@Receiver.Extra DownloadFile file) {
+    public void onDownloadCompete(@Receiver.Extra DownloadFile file) {
         if (file.getUrl().equals(downloadFile.getUrl())){
             downloadFile = file;
             activeDownload();
@@ -327,7 +327,7 @@ String TAG = getClass().getSimpleName();
 
     @Receiver(actions = ConnectivityManager.CONNECTIVITY_ACTION)
     @UiThread
-    void onNetWorkChanged() {
+    public void onNetWorkChanged() {
         if(NetWorkUtils.isNetworkConnected(this)){
             startDownload();
         }else
@@ -335,21 +335,21 @@ String TAG = getClass().getSimpleName();
     }
 
     @UiThread
-    void serverConnectionException() {
+    public void serverConnectionException() {
         Toast.makeText(this,netConnectException,Toast.LENGTH_LONG).show();
         dismissLoading();
         pauseDownloadWhenNetworkException();
     }
 
     @UiThread
-    void netWorkException() {
+    public void netWorkException() {
         Toast.makeText(this,netExcption,Toast.LENGTH_LONG).show();
         dismissLoading();
         pauseDownloadWhenNetworkException();
     }
 
     @Override
-    protected void onResume() {
+    public void onResume() {
         super.onResume();
         //判断是否已安装，安装了就跳转到bbs
         //检测本地是否已存在
