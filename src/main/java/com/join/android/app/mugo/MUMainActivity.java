@@ -249,6 +249,7 @@ String TAG = getClass().getSimpleName();
         isDownloading = false;
         btnDownload.setImageDrawable(getResources().getDrawable(R.drawable.start_download));
         download_now.setText(getString(R.string.net_excption));
+        speed.setText("");
         DownloadTool.pause(this, downloadFile);
     }
 

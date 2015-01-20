@@ -69,7 +69,7 @@ public class StatisticsService {
     public void acceleratorActive(String uuid,String appid,String resource){
         try {
             uuid = uuid.replaceAll(":","_");
-            activation(uuid,appid,resource);
+//            activation(uuid,appid,resource);
             SDKCounter.send(SDKCounter.acceleratorActive(URLEncoder.encode(uuid,"UTF8"),appid,resource));
         } catch (Exception e) {
             e.printStackTrace();
