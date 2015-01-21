@@ -76,7 +76,7 @@ public class DownloadManager {
     public DownloadManager(DownloadHandler downloadHandler, Context context) {
         this.downloadHandler = downloadHandler;
         this.context = context;
-        this.basePath = Environment.getExternalStorageDirectory()+"/Android/data/"+context.getPackageName()+"/files";
+        this.basePath = Environment.getExternalStorageDirectory() + "/Android/data/" + context.getPackageName() + "/files";
 //        this.basePath = context.getExternalFilesDir("").getAbsolutePath();
 
         this.setStopped(true);
@@ -87,15 +87,15 @@ public class DownloadManager {
         this.context = context;
 //        this.basePath = context.getExternalFilesDir("").getAbsolutePath();
         String a = context.getExternalFilesDir("").getAbsolutePath();
-        this.basePath = Environment.getExternalStorageDirectory()+"/Android/data/"+context.getPackageName()+"/files";
+        this.basePath = Environment.getExternalStorageDirectory() + "/Android/data/" + context.getPackageName() + "/files";
         this.setStopped(true);
 //        app = (DownloadApplication) context.getApplicationContext();
     }
 
 
-    public void download(final String url,final String portraitURL, final String showName, final String packageName ,final Dtype dtype, final String fileType, final DownloadFileDao downloadFileDao, final DownloadTool.DownloadToolCallback callback) {
+    public void download(final String url, final String portraitURL, final String showName, final String packageName, final Dtype dtype, final String fileType, final DownloadFileDao downloadFileDao, final DownloadTool.DownloadToolCallback callback) {
         if (!isStopped()) {
-            Log.d(TAG,"download is going on...");
+            Log.d(TAG, "download is going on...");
             return;
         }
         this.setStopped(false);
@@ -120,14 +120,31 @@ public class DownloadManager {
 
                     String filePath = null;
                     String fileName = null;
-
-                        filePath = basePath + "/" + DigestTool.md5(url);
-                        fileName = DigestTool.md5(url);
+                    File f = new File(basePath);
+                    if (!f.exists()) {
+                        try {
+                            //按照指定的路径创建文件夹
+                            f.mkdirs();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    filePath = basePath + "/" + DigestTool.md5(url);
+                    fileName = DigestTool.md5(url);
 
                     final File downloadFile = new File(filePath);
+                    if (!downloadFile.exists()) {
+                        try {
+                            //按照指定的路径创建文件\
+                            downloadFile.createNewFile();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+
+                    }
                     //创建meta文件
-                    temp  = downloadFileDao.queryByTag(DigestTool.md5(url));
-                    if(temp == null) {
+                    temp = downloadFileDao.queryByTag(DigestTool.md5(url));
+                    if (temp == null) {
                         temp = new DownloadFile();
                         temp.setAbsolutePath(filePath);
                         temp.setBasePath(basePath);
@@ -149,26 +166,26 @@ public class DownloadManager {
                     } else {
                         File ff = new File(temp.getAbsolutePath());
 
-                        if(temp.getTotalSize()==ff.length()){
+                        if (temp.getTotalSize() == ff.length()) {
                             temp.setFinished(true);
                             temp.setPercent("100%");
                             temp.setFinishTime(DateUtils.FormatForNormalTimeFromMil(System.currentTimeMillis()));
                             downloadFileDao.update(temp);
                             DownloadCoreServiceHelper.removeDownloadManager(temp.getTag());
                             Intent intent = new Intent(BroadcastAction.ACTION_DOWNLOAD_COMPLETE);
-                            intent.putExtra("file",temp);
+                            intent.putExtra("file", temp);
                             context.sendBroadcast(intent);
                             return;
-                        }else{
-                            conn.setRequestProperty("RANGE", "bytes="+ff.length()+"-");
-                            out = new FileOutputStream(downloadFile,true);
+                        } else {
+                            conn.setRequestProperty("RANGE", "bytes=" + ff.length() + "-");
+                            out = new FileOutputStream(downloadFile, true);
                         }
                     }
                     callback.afterStartDownload(temp);
 
                     String contentType = conn.getContentType();
                     final int contentLength = conn.getContentLength();
-                    if(temp.getTotalSize()==null||temp.getTotalSize()==0){
+                    if (temp.getTotalSize() == null || temp.getTotalSize() == 0) {
                         temp.setTotalSize(contentLength);
                     }
 
@@ -205,10 +222,10 @@ public class DownloadManager {
                         downloadFileDao.update(temp);
                         DownloadCoreServiceHelper.removeDownloadManager(temp.getTag());
                         Intent intent = new Intent(BroadcastAction.ACTION_DOWNLOAD_COMPLETE);
-                        intent.putExtra("file",temp);
+                        intent.putExtra("file", temp);
                         context.sendBroadcast(intent);
                         //
-                        if (downloadHandler!=null&&isFinished()) {
+                        if (downloadHandler != null && isFinished()) {
                             downloadHandler.finished();
                             Log.v(TAG, "download has finished!!");
                         }
@@ -224,19 +241,18 @@ public class DownloadManager {
                     //发生异常暂停下载
                     DownloadCoreServiceHelper.removeDownloadManager(temp.getTag());
                     Intent intent = new Intent(BroadcastAction.ACTION_DOWNLOAD_INTERRUPT);
-                    intent.putExtra("file",temp);
+                    intent.putExtra("file", temp);
                     context.sendBroadcast(intent);
                     throw new RuntimeException(e);
-                }catch (Exception e){
+                } catch (Exception e) {
                     //发生异常暂停下载
                     DownloadCoreServiceHelper.removeDownloadManager(temp.getTag());
                     Intent intent = new Intent(BroadcastAction.ACTION_DOWNLOAD_INTERRUPT);
-                    intent.putExtra("file",temp);
+                    intent.putExtra("file", temp);
                     context.sendBroadcast(intent);
                     e.printStackTrace();
                     throw new RuntimeException(e);
-                }
-                finally {
+                } finally {
                     try {
                         if (null != in) {
                             in.close();
@@ -281,7 +297,7 @@ public class DownloadManager {
 
                         if (null != downloadHandler) {
                             if (isFinished()) {
-                                    downloadHandler.finished();
+                                downloadHandler.finished();
                                 Log.v(TAG, "download has finished!!");
                                 break;
                             }
@@ -306,7 +322,6 @@ public class DownloadManager {
         });
         return future;
     }
-
 
 
 }

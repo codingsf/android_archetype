@@ -77,11 +77,12 @@ String TAG = getClass().getSimpleName();
         //加载广告
         ad();
 
-        if(!sysPref.active().get()){
+//        if(!sysPref.active().get()){
             active();
-        }
+//        }
         //检测本地是否已存在
         if(!sysPref.packageName().get().equals("-1")&&APKUtils_.getInstance_(this).checkInstall(this,sysPref.packageName().get())){
+            activeDownload();
             BBSActivity_.intent(this).start();
             finish();
         }else{
@@ -113,6 +114,7 @@ String TAG = getClass().getSimpleName();
 
                         }
                     });
+                    activeDownload();
 
                 }else{
                     if(StringUtils.isNotEmpty(downloadFile.getPercent())&&downloadFile.getPercent().contains("%"))
